@@ -1,242 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CricketVerse</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-body{background-image:url('banner/bg2.webp');background-size:cover;background-attachment:fixed;background-position:center;}
-.card p-3{background:#1b7ad9;border-radius:8px;box-shadow:0 2px 5px rgba(21, 145, 48, 0.1)}
-.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&');background-size:cover;background-position:center;color:#fff;padding:120px 20px;text-align:center}
-.card:hover{transform:translateY(-8px);transition:.3s}
-.stadium-img{height:220px;object-fit:cover}
-footer{background:linear-gradient(rgba(127, 150, 169, 0.966),rgba(223, 163, 163, 0.7)),url("banner/banner.webp");background-size:cover;color:#fff,background-position:center}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CricketVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background: rgba(0, 0, 0, .7);
+            backdrop-filter: blur(15px);
+        }
+
+        #facts .card {
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        body {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url("banner/bg3d.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+        }
+
+        .card.p3 {
+            background: #1b7ad9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(21, 145, 48, 0.1)
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 120px 20px;
+            text-align: center
+        }
+
+        .card:hover {
+            transform: scale(1.1) rotatey(10deg);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: rgb(77, 146, 177);
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .stadium-img {
+            height: 220px;
+            object-fit: cover;
+            transition: .5s
+        }
+
+       footer{
+    padding:40px 0;
+    margin-top:50px;
+    background:linear-gradient(
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.85)
+    ),
+    url("banner/banner.webp");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    border-top:2px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+}
+
+        .popup-img {
+            width: 100%;
+            height: 350px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-<div class="container">
-<a class="navbar-brand fw-bold" href="#">CricketVerse</a>
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-<div class="collapse navbar-collapse" id="nav">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="#facts">Facts</a></li>
-<li class="nav-item"><a class="nav-link" href="#stadiums">Stadiums</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-</ul>
-</div>
-</div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">CricketVerse</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#facts">Facts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stadiums">Stadiums</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<section class="hero" id="home">
-<h1 class="display-3 fw-bold">CricketVerse</h1>
-<h2>Explore the heart of cricket. </h2>
-</section>
+    <section class="hero" id="home">
+        <h1 class="display-3 fw-bold">CricketVerse</h1>
+        <h2>Explore the heart of cricket. </h2>
+    </section>
 
-<section class="container py-5" id="facts">
-<h2 class="text-center mb-4">Interesting Cricket Facts</h2>
-<div class="row g-4">
-<div class="col-md-4"><div class="card p-3"><b>Largest Stadium</b><p>Narendra Modi Stadium is the largest cricket stadium in the world.</p></div></div>
-<div class="col-md-4"><div class="card p-3"><b>First World Cup</b><p>The first Cricket World Cup was held in 1975.</p></div></div>
-<div class="col-md-4"><div class="card p-3"><b>Longest Match</b><p>A timeless Test match once lasted 12 days.</p></div></div>
-</div>
-</section>
+    <section class="container py-5" id="facts">
+        <h2 class="text-center mb-4">Interesting Cricket Facts</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card p-3"><b>Largest Stadium</b>
+                    <p>Narendra Modi Stadium is the largest cricket stadium in the world.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3"><b>First World Cup</b>
+                    <p>The first Cricket World Cup was held in 1975.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3"><b>Longest Match</b>
+                    <p>A timeless Test match once lasted 12 days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="container py-5" id="stadiums">
-<h2 class="text-center mb-4">Top 10 Stadiums</h2>
-<div class="row g-4">
+    <section class="container py-5" id="stadiums">
+        <h2 class="text-center mb-4">Top 10 Stadiums</h2>
+        <div class="row g-4">
 
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m1" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/modi.jpg">
-<div class="card-body"><h5>Narendra Modi Stadium</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m2" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/wak.jpg">
-<div class="card-body"><h5>Wankhede Stadium</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m3" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/ed.jpg">
-<div class="card-body"><h5>Eden Gardens</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m4" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/dhar.jpg">
-<div class="card-body"><h5>dharmshala Stadium</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m5" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/lords.jpg">
-<div class="card-body"><h5>lords cricket Stadium</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m6" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/chinna.jpg">
-<div class="card-body"><h5>Chinnaswamy Stadium</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m7" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/nl.webp">
-<div class="card-body"><h5>Newlands Cricket Ground</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m8" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/melb.jpg">
-<div class="card-body"><h5>Melbourne Cricket Ground</h5><p>Click for details.</p></div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100" data-bs-toggle="modal" data-bs-target="#m9" style="cursor:pointer">
-<img class="stadium-img card-img-top" src="images/nl.jpg">
-<div class="card-body"><h5>Queen's Park Oval</h5><p>Click for details.</p></div>
-</div>
-</div>
-</div></div></section>
-<div class="modal fade" id="m1">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>Narendra Modi Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<div class="row mb-3">
-<div class="col-md-6">
-        <img src="images/inm.jpg" class="img-fluid rounded">
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m1" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/modi.jpg">
+                    <div class="card-body">
+                        <h5>Narendra Modi Stadium</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m2" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/wak.jpg">
+                    <div class="card-body">
+                        <h5>Wankhede Stadium</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m3" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/ed.jpg">
+                    <div class="card-body">
+                        <h5>Eden Gardens</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m4" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/dhar.jpg">
+                    <div class="card-body">
+                        <h5>dharmshala Stadium</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m5" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/lords.jpg">
+                    <div class="card-body">
+                        <h5>lords cricket Stadium</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m6" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/chinna.jpg">
+                    <div class="card-body">
+                        <h5>Chinnaswamy Stadium</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m7" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/nl.webp">
+                    <div class="card-body">
+                        <h5>Newlands Cricket Ground</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m8" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/melb.jpg">
+                    <div class="card-body">
+                        <h5>Melbourne Cricket Ground</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#m9" style="cursor:pointer">
+                    <img class="stadium-img card-img-top" src="images/nl.jpg">
+                    <div class="card-body">
+                        <h5>Queen's Park Oval</h5>
+                        <p>Click for details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="modal fade" id="m1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Narendra Modi Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <img src="images/inm.jpg" class="popup-img mb-3 rounded">
+                        </div>
+
+                        <div class="col-md-6">
+                            <img src="images/inm2.webp" class="popup-img mb-3 rounded">
+                        </div>
+                    </div>
+                    <p><b>Location:</b> GUJARAT</p>
+                    <p><b>Facts:</b> The stadium has 11 center pitches, allowing curators to prepare different types of
+                        wickets for various formats and conditions.</p>
+                    <p><b>Facts:</b> Unlike most international stadiums that have two dressing rooms, Narendra Modi
+                        Stadium has four, making it easier to host back-to-back matches and tournaments.</p>
+                    <p><b>Facts:</b> The stadium is equipped with state-of-the-art facilities and technology, ensuring a
+                        world-class experience for players and spectators alike.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-6">
-        <img src="images/inm2.webp" class="img-fluid rounded">
-    </div>
-</div>
-<p><b>Location:</b> GUJARAT</p>
-<p><b>Facts:</b> The stadium has 11 center pitches, allowing curators to prepare different types of wickets for various formats and conditions.</p>
-<p><b>Facts:</b> Unlike most international stadiums that have two dressing rooms, Narendra Modi Stadium has four, making it easier to host back-to-back matches and tournaments.</p>
-</div></div></div></div>
+    <div class="modal fade" id="m2">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Wankhede Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <img src="images/iwak.jpg" class="popup-img mb-3 rounded">
+                            </div>
 
-<div class="modal fade" id="m2">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>Wankhede Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<div class="row mb-3">
-<div class="row mb-3">
-    <div class="col-md-6">
-        <img src="images/iwak.jpg" class="img-fluid rounded">
-    </div>
-
-    <div class="col-md-6">
-        <img src="images/wk2.jpg" class="img-fluid rounded">
-    </div>
-</div>
-</div>
-<p><b>Location:</b> MUMBAI, MAHARASHTRA</p>
-<p><b>Facts:</b> The most famous moment in the stadium's history is when MS Dhoni hit the winning six against Sri Lanka to win the 2011 Cricket World Cup for India.</p>
-<p><b>Facts:</b> The stadium has a unique feature called the "Wankhede Wall," which is a high boundary on one side of the ground that can make it challenging for batsmen to clear.</p>
-</div></div></div></div>
-
-<div class="modal fade" id="m3">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>Eden Gardens</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<div class="row mb-3">
-    <div class="col-md-6">
-        <img src="images/ieden.jpg" class="img-fluid mb-3  rounded">
-    </div>
-</div>
-<p><b>Location:</b> kolkata</p>
-<p><b>Facts:</b> Eden Gardens was established in 1864, making it the oldest cricket stadium in India and one of the oldest in the world.</p>
-<p><b>Facts:</b> The stadium has witnessed some of the most memorable moments in cricket history, including the 2001 Test match between India and Australia, where VVS Laxman and Rahul Dravid's partnership turned the game around for India.</p>  
-</div></div></div></div>
-
-<div class="modal fade" id="m4">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>dharmshala Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<div class="row mb-3">
-<div class="col-md-6">
-        <img src="images/ied2.jpg" class="img-fluid rounded">
+                            <div class="col-md-6">
+                                <img src="images/wk2.jpg" class="popup-img mb-3  rounded">
+                            </div>
+                        </div>
+                    </div>
+                    <p><b>Location:</b> MUMBAI, MAHARASHTRA</p>
+                    <p><b>Facts:</b> The most famous moment in the stadium's history is when MS Dhoni hit the winning
+                        six against Sri Lanka to win the 2011 Cricket World Cup for India.</p>
+                    <p><b>Facts:</b> The stadium has a unique feature called the "Wankhede Wall," which is a high
+                        boundary on one side of the ground that can make it challenging for batsmen to clear.</p>
+                    <p><b>Facts:</b> The stadium is known for its passionate fans and electric atmosphere, especially
+                        during high-stakes matches.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-6">
-        <img src="images/ieden.jpg" class="img-fluid rounded">
+    <div class="modal fade" id="m3">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Eden Gardens</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/ieden.jpg" class="popup-img">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/ieden2.jpeg" class="popup-img">
+                        </div>
+                    </div>
+                    <p><b>Location:</b> kolkata</p>
+                    <p><b>Facts:</b> Eden Gardens was established in 1864, making it the oldest cricket stadium in India
+                        and one of the oldest in the world.</p>
+                    <p><b>Facts:</b> The stadium is known for its vibrant atmosphere and has hosted numerous iconic
+                        matches throughout its history.</p>
+                    <p><b>Facts:</b> The stadium has witnessed some of the most memorable moments in cricket history,
+                        including the 2001 Test match between India and Australia, where VVS Laxman and Rahul Dravid's
+                        partnership turned the game around for India.</p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<p><b>Location:</b> chandigarh</p>
-<p><b>Facts:</b> The stadium is surrounded by the snow-capped Dhauladhar Range, giving spectators breathtaking views during matches.</p>
 
-</div></div></div></div>
+    <div class="modal fade" id="m4">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>dharmshala Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <img src="images/ied2.jpg" class="popup-img mb-3 rounded">
+                        </div>
 
-<div class="modal fade" id="m5">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>lords cricket Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<div class="row mb-3">
-<div class="col-md-6">
-        <img src="images/ilords.jpg" class="img-fluid rounded">
+                        <div class="col-md-6">
+                            <img src="images/ieden.jpg" class="popup-img mb-3 rounded">
+                        </div>
+                    </div>
+                    <p><b>Location:</b> chandigarh</p>
+                    <p><b>Facts:</b> The stadium is surrounded by the snow-capped Dhauladhar Range, giving spectators
+                        breathtaking views during matches.</p>
+                    <p><b>Facts:</b> The stadium is known for its unique architecture and has hosted numerous
+                        international cricket matches.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-6">
-        <img src="images/ilords2.avif" class="img-fluid rounded">
+    <div class="modal fade" id="m5">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>lords cricket Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <img src="images/ilords.jpg" class="popup-img mb-3 rounded">
+                        </div>
+
+                        <div class="col-md-6">
+                            <img src="images/ilords2.avif" class="popup-img mb-3 rounded">
+                        </div>
+                    </div>
+                    <p><b>Location:</b> england</p>
+                    <p><b>Facts:</b> Lord's Cricket Ground is known as the "Home of Cricket" and has hosted numerous
+                        historic matches.</p>
+                    <p><b>Facts:</b> The stadium features the iconic Lord's Pavilion, which is a symbol of cricketing
+                        heritage and tradition.</p>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<p><b>Location:</b> england</p>
-<p><b>Facts:</b> Lord's Cricket Ground is known as the "Home of Cricket" and has hosted numerous historic matches.</p>
-<p><b>Facts:</b> The stadium features the iconic Lord's Pavilion, which is a symbol of cricketing heritage and tradition.</p>
-</div></div></div></div>
 
-<div class="modal fade" id="m6">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>chinna swamy Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<img src="images/ichinna.jpg" class="img-fluid mb-3 rounded">
-<p><b>Location:</b> banglore</p>
-<p><b>Facts:</b> The stadium is named after the legendary Indian cricketer C. N. Annadurai, also known as Chinna Swamy.</p>
-<p><b>Facts:</b> The stadium has a seating capacity of around 40,000 and is known for its passionate cricket fans who create an electrifying atmosphere during matches.</p>
-</div></div></div></div>
+    <div class="modal fade" id="m6">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>chinna swamy Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/ichinna.jpg" class="popup-img mb-3 rounded">
+                    <p><b>Location:</b> banglore</p>
+                    <p><b>Facts:</b> The stadium is named after the legendary Indian cricketer C. N. Annadurai, also
+                        known as Chinna Swamy.</p>
+                    <p><b>Facts:</b> The stadium has a seating capacity of around 40,000 and is known for its passionate
+                        cricket fans who create an electrifying atmosphere during matches.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="modal fade" id="m7">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>newlands cricket ground</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<img src="https://picsum.photos/seed/detail7/900/400" class="img-fluid mb-3 rounded">
-<p><b>Location:</b> new zealand</p>
-<p><b>Facts:</b> Newlands Cricket Ground is a historic venue in Cape Town, South Africa, known for its unique setting and rich cricketing heritage.</p>
-<p><b>Facts:</b> The stadium is situated at the foot of Table Mountain, providing stunning views for spectators and players alike.</p>
-</div></div></div></div>
+    <div class="modal fade" id="m7">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>newlands cricket ground</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://picsum.photos/seed/detail7/900/400" class="popup-img mb-3 rounded">
+                    <p><b>Location:</b> new zealand</p>
+                    <p><b>Facts:</b> Newlands Cricket Ground is a historic venue in Cape Town, South Africa, known for
+                        its unique setting and rich cricketing heritage.</p>
+                    <p><b>Facts:</b> The stadium is situated at the foot of Table Mountain, providing stunning views for
+                        spectators and players alike.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="modal fade" id="m8">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>melbourne Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<img src="images/imcg.jpg" class="img-fluid mb-3 rounded">
-<p><b>Location:</b> austrilia</p>
-<p><b>Facts:</b> Melbourne Cricket Ground is one of the most iconic cricket venues in the world, known for its rich history and thrilling matches.</p>
-</div></div></div></div>
+    <div class="modal fade" id="m8">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>melbourne Stadium</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <img src="images/imcg.jpg" class="popup-img mb-3 rounded">
+                        </div>
 
-<div class="modal fade" id="m9">
-<div class="modal-dialog modal-lg"><div class="modal-content">
-<div class="modal-header"><h4>queens park oval</h4><button class="btn-close" data-bs-dismiss="modal"></button></div>
-<div class="modal-body">
-<img src="https://picsum.photos/seed/detail9/900/400" class="img-fluid mb-3 rounded">
-<p><b>Location:</b> Famous cricket venue.</p>
-<p><b>Facts:</b> Queens Park Oval is a historic cricket ground in Sydney, Australia, known for its unique atmosphere and rich cricketing heritage.</p>
-<p><b>Facts:</b> The stadium has hosted numerous memorable matches, including the famous 1981 Ashes Test where Ian Botham's heroics turned the game in England's favor.</p>
-</div></div></div></div>
-<footer class="py-4 mt-5" id="contact">
-<div class="container text-center">
-<h4>CricketVerse</h4>
-<p>About Us | Contact | Privacy Policy</p>
-<p>© 2026 CricketVerse</p>
-</div>
-</footer>
+                        <div class="col-md-6">
+                            <img src="images/imcg2.jpg" class="popup-img mb-3 rounded">
+                        </div>
+                    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body></html>
+                    <p><b>Location:</b> austrilia</p>
+                    <p><b>Facts:</b> Melbourne Cricket Ground is one of the most iconic cricket venues in the world,
+                        known for its rich history and thrilling matches.</p>
+                    <p><b>Facts:</b> The stadium has a seating capacity of over 100,000, making it one of the largest
+                        cricket stadiums globally and creating an electrifying atmosphere during matches.</p>
+                    <p><b>Facts:</b> The MCG has hosted numerous historic moments in cricket, including the first-ever
+                        Test match in 1877 and the 1992 Cricket World Cup final where Pakistan defeated England.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="m9">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>queens park oval</h4><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://picsum.photos/seed/detail9/900/400" class="popup-img mb-3 rounded">
+                    <p><b>Location:</b> Famous cricket venue.</p>
+                    <p><b>Facts:</b> Queens Park Oval is a historic cricket ground in Sydney, Australia, known for its
+                        unique atmosphere and rich cricketing heritage.</p>
+                    <p><b>Facts:</b> The stadium has hosted numerous memorable matches, including the famous 1981 Ashes
+                        Test where Ian Botham's heroics turned the game in England's favor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="py-4 mt-5" id="contact">
+        <div class="container text-center">
+            <h4>CricketVerse</h4>
+            <p>About Us | Contact | Privacy Policy</p>
+            <p>© 2026 CricketVerse</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
