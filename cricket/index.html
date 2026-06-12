@@ -11,6 +11,24 @@
             background: rgba(0, 0, 0, .7);
             backdrop-filter: blur(15px);
         }
+        nav a{
+            position:relative;
+        }
+
+        nav a::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0;
+            height:2px;
+            background:#c1121f;
+            transition:.3s;
+        }
+
+        nav a:hover::after{
+            width:100%;
+        }
 
         #facts .card {
             height: 160px;
